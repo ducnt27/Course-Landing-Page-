@@ -1,0 +1,13 @@
+$bg-color: #fdf0df;
+$yellow: #fe0;
+$blue: #434ec4;
+$black: #0b0d21;
+
+//text
+
+$textTransition: 0.3s ease-in-out;
+
+%flexItemCenter {
+  display: flex;
+  align-items: center;
+}

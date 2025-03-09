@@ -1,0 +1,170 @@
+@use "../abstracts" as abs;
+
+// Biến cho SCSS
+$marquee-height: 50px;
+$animation-duration: 20s;
+$animation-delay: 1s;
+$padding-horizontal: 30px;
+
+%flexItemCenter {
+  display: flex;
+  align-items: center;
+}
+// Mã SCSS cho hiệu ứng Marquee
+.marquee {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: $marquee-height;
+  overflow: hidden;
+  background-color: abs.$yellow;
+  margin: 0 auto;
+
+  &__content {
+    list-style: none;
+    @extend %flexItemCenter;
+    padding-left: 0;
+    animation: marquee $animation-duration linear infinite;
+    animation-delay: $animation-delay;
+
+    li {
+      flex-shrink: 0;
+      white-space: nowrap;
+      margin: 0 24px;
+      line-height: $marquee-height;
+      list-style-type: disc;
+      a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: abs.$blue;
+        }
+      }
+    }
+  }
+}
+
+// Keyframes cho animation
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); // Bắt đầu từ ngoài màn hình bên phải
+  }
+  100% {
+    transform: translateX(-100%); // Kết thúc ngoài màn hình bên trái
+  }
+}
+
+.header {
+  background: abs.$bg-color;
+
+  &-main {
+    @extend %flexItemCenter;
+    justify-content: space-between;
+    margin-top: 30px;
+    @include abs.breakpoints(lg) {
+      margin-top: 18px;
+    }
+    &__more {
+      display: none;
+      @include abs.breakpoints(lg) {
+        display: block;
+      }
+    }
+  }
+}
+.fa-bars {
+  font-size: 18px;
+}
+.logo {
+  @extend %flexItemCenter;
+  gap: 8px;
+  &__icon {
+    color: var(--text-color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px; /* 141.667% */
+  }
+  &__title {
+    color: var(--text-color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px; /* 141.667% */
+  }
+  &--bar {
+    display: none;
+    @include abs.breakpoints(lg) {
+      display: flex;
+      padding-bottom: 20px;
+    }
+  }
+}
+.navbar {
+  @extend %flexItemCenter;
+  // justify-content: flex-start;
+  @include abs.breakpoints(lg) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    display: block;
+    padding: 30px;
+    background: #fff;
+    z-index: 5;
+    transition: var(--smooth);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  &__list {
+    @extend %flexItemCenter;
+    margin-right: 70px;
+    @include abs.breakpoints(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__open {
+    transform: translateX(0);
+    opacity: 1;
+    transition: var(--smooth);
+  }
+  &__link {
+    padding: 8px 25px;
+    color: var(--text-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 155.556% */
+    transition: abs.$textTransition;
+    &:hover {
+      background: abs.$yellow;
+      border-radius: 4px;
+      @include abs.breakpoints(lg) {
+        background: transparent !important;
+        border: none;
+      }
+    }
+    @include abs.breakpoints(lg) {
+      display: inline-block;
+      padding: 8px 0;
+    }
+  }
+}
+.menu-btn {
+  display: none;
+  background: url(../../assets/icons/menu.svg) no-repeat;
+  background-size: 30px;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  @include abs.breakpoints(lg) {
+    display: block;
+  }
+}

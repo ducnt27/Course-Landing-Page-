@@ -1,0 +1,5 @@
+@use "./base";
+@use "./layout";
+@use "./components";
+@use "./abstracts"; // Đặt tất cả các function CSS của bạn ở đây, cùng với variables và mixin.
+@use "./page"; //@use "./vendors"; ơi bạn chứa tất cả các file không phụ thuộc nếu ứng dụng của bạn sử dụng thư viện bên ngoài (third party). Chúng có thể là FontAwesome, Bootstrap

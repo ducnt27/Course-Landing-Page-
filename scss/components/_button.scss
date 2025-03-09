@@ -1,0 +1,29 @@
+@use "../abstracts" as abs;
+.btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 155.556%; /* 155.556% */
+  border-radius: 4px;
+  background: #0b0d21;
+  &--login {
+    padding: 8px 25px;
+    @include abs.breakpoints(lg) {
+      // max-width: 250px;
+      margin-top: 18px;
+    }
+  }
+  &--banner {
+    padding: 15px 35px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+  &--start {
+    padding: 15px 35px;
+    color: var(--text-color);
+    background: abs.$yellow;
+  }
+}

@@ -1,0 +1,30 @@
+@use "sass:map";
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  //   xxl: 1400px,
+);
+@mixin breakpoints($key) {
+  $breakpoint: map.get($grid-breakpoints, $key);
+  @if ($breakpoint) {
+    @media (max-width: ($breakpoint - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @error "The value #{$key} is not in breakpoints list.";
+  }
+}
+@mixin flex(
+  $direction: row,
+  $wrap: nowrap,
+  $justify: flex-start,
+  $align: stretch
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}

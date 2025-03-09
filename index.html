@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- script -->
+    <script src="./assets/js/main.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- overlay -->
+    <section id="overlay"></section>
+    <!-- header -->
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "./templates/header.html");
+    </script>
+
+    <!-- banner -->
+    <section class="banner">
+      <div class="container">
+        <div class="banner__inner">
+          <div class="banner__content">
+            <h1 class="banner__heading">You learn today and earn tomorrow.</h1>
+            <p class="banner__desc">
+              You learn today and earn tomorrow. The roots of education are
+              bitter but the fruits are sweet. If you learn today you can lead
+              tomorrow.
+            </p>
+            <!-- Nhóm nút hành động -->
+            <div class="banner__actions">
+              <button class="btn btn--banner">Start Learning</button>
+              <button class="btn btn--banner">Explore Courses</button>
+            </div>
+            <!-- Đánh giá -->
+            <div class="banner__reviews">
+              <div class="">
+                <img
+                  src="../assets/icons/star.svg"
+                  class="banner__star"
+                  alt=""
+                />
+                <img
+                  src="../assets/icons/star.svg"
+                  class="banner__star"
+                  alt=""
+                />
+                <img
+                  src="../assets/icons/star.svg"
+                  class="banner__star"
+                  alt=""
+                />
+                <img
+                  src="../assets/icons/star.svg"
+                  class="banner__star"
+                  alt=""
+                />
+                <img
+                  src="../assets/icons/star.svg"
+                  class="banner__star"
+                  alt=""
+                />
+                <img
+                  src="../assets/icons/star.svg"
+                  class="banner__star"
+                  alt=""
+                />
+              </div>
+              <span class="banner__reviews-count">10000+</span>
+              <p class="banner__reviews-score">Clients reviews (4.5 of 5)</p>
+              <a href="#" class="banner__reviews-link">All Review</a>
+            </div>
+          </div>
+          <div class="banner-std">
+            <div class="banner-std__first">
+              <div class="banner-std__top">
+                <img
+                  src="./assets/img/std1.1.png"
+                  alt=""
+                  class="banner-std__image"
+                />
+              </div>
+              <div class="banner-std__left">
+                <img
+                  src="./assets/img/std1.1.png"
+                  alt=""
+                  class="banner-std__image"
+                />
+              </div>
+            </div>
+            <div class="banner-std__second">
+              <div class="banner-std__right">
+                <img
+                  src="./assets/img/std1.1.png"
+                  alt=""
+                  class="banner-std__image"
+                />
+              </div>
+              <div class="banner-std__bottom">
+                <img
+                  src="./assets/img/std1.1.png"
+                  alt=""
+                  class="banner-std__image"
+                />
+              </div>
+              <div class="banner-std__scroll">
+                <div class="">
+                  <img src="../assets/icons/mouse.svg" alt="" class="" />
+                </div>
+                <span class="banner-std__scroll-title">Scroll Down</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- stats: thong ke -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats__inner">
+          <div class="stats__item">
+            <h2 class="stats__number">8K+</h2>
+            <p class="stats__label">Success Stories</p>
+          </div>
+          <div class="stats__divider"></div>
+          <div class="stats__item">
+            <h2 class="stats__number">12K+</h2>
+            <p class="stats__label">Expert Instructor</p>
+          </div>
+          <div class="stats__divider"></div>
+          <div class="stats__item">
+            <h2 class="stats__number">108K+</h2>
+            <p class="stats__label">Worldwide Students</p>
+          </div>
+          <div class="stats__divider"></div>
+          <div class="stats__item">
+            <h2 class="stats__number">310+</h2>
+            <p class="stats__label">Trendy Subjects</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- learning-platform -->
+    <section class="learning-platform">
+      <div class="container">
+        <section class="hero">
+          <div class="section-heading">
+            <h1 class="section-heading__title">
+              Providing the best solutions for your study
+            </h1>
+            <p class="section-heading__subtitle">
+              You learn today and earn tomorrow. The roots of education are
+              bitter but the fruits are sweet.
+            </p>
+          </div>
+          <div class="tabs">
+            <div class="tabs__item tabs__item--active">Recorded Class</div>
+            <div class="tabs__item">Live Class</div>
+            <div class="tabs__item">Lifetime support</div>
+          </div>
+        </section>
+        <!-- end hero -->
+
+        <!-- Recorded Class Section -->
+        <section class="feature feature--recorded" id="recorded-class">
+          <div class="feature__inner">
+            <div class="feature__content">
+              <h2 class="feature__title">
+                Recorded class gives you more flexibility to learn faster.
+              </h2>
+              <p class="feature__description">
+                You learn today and earn tomorrow. The roots of education are
+                bitter but the fruits are sweet. If you learn today you can lead
+                tomorrow.
+              </p>
+              <button class="btn btn--start">Start Learning</button>
+            </div>
+            <div class="feature__media">
+              <div class="video-card">
+                <div class="video-card__player">
+                  <div class="video-card__timestamp">45:35</div>
+                  <div class="video-card__controls">
+                    <div class="video-card__progress">1</div>
+                    <div class="video-card__buttons"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live Class Section -->
+        <section class="feature feature--live" id="live-class">
+          <div class="feature__inner">
+            <div class="feature__content">
+              <h2 class="feature__title">
+                Learn anything from the best mentors in real time.
+              </h2>
+              <p class="feature__description">
+                You learn today and earn tomorrow. The roots of education are
+                bitter but the fruits are sweet. If you learn today you can lead
+                tomorrow.
+              </p>
+              <button class="btn btn--start">Start Learning</button>
+            </div>
+            <div class="feature__media">
+              <div class="video-card">
+                <div class="video-card__player">
+                  <div class="video-card__controls">
+                    <div class="video-card__progress"></div>
+                    <div class="video-card__buttons"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lifetime Support Section -->
+        <section class="feature feature--support" id="lifetime-support">
+          <div class="feature__inner">
+            <div class="feature__content">
+              <h2 class="feature__title">
+                Get lifetime support from your expert mentors
+              </h2>
+              <p class="feature__description">
+                You learn today and earn tomorrow. The roots of education are
+                bitter but the fruits are sweet. If you learn today you can lead
+                tomorrow.
+              </p>
+              <button class="btn btn--start">Start Learning</button>
+            </div>
+            <div class="feature__media">
+              <div class="video-card">
+                <div class="video-card__player">
+                  <div class="video-card__controls">
+                    <div class="video-card__progress"></div>
+                    <div class="video-card__buttons"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- category -->
+    <section class="category">
+      <div class="container">
+        <div class="category__inner">
+          <section class="section-heading">
+            <h2 class="section__title">Explore courses by category</h2>
+            <p class="section__subtitle">
+              You learn today and earn tomorrow. The roots of education are
+              bitter but the fruits are sweet. If you learn today you can lead
+              tomorrow. Explore the best categories.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
