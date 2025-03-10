@@ -11,10 +11,11 @@ html {
 :root {
   --text-color: #0b0d21;
   --text-gray: #686977;
-  --smooth: all 0.3s ease-in;
+  --primary-color-light: #e9eaf0;
+  --smooth: all 0.3s ease-in-out;
 }
 body {
-  font-size: 1.6rem;
+  // font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
   color: var(--text-color);
 }
