@@ -20,11 +20,13 @@ $grid-columns: 12;
 $grid-gutter-width: 32px;
 
 %gutter-padding {
-  padding-left: $grid-gutter-width * 0.5;
-  padding-right: $grid-gutter-width * 0.5;
+  padding-left: calc(var(--grid-gutter-x) * 0.5);
+  padding-right: calc(var(--grid-gutter-x) * 0.5);
 }
 
 .container-fluid {
+  --grid-gutter-x: #{$grid-gutter-width};
+  --grid-gutter-y: #{$grid-gutter-width};
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -38,12 +40,17 @@ $grid-gutter-width: 32px;
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$grid-gutter-width * 0.5;
-  margin-right: -$grid-gutter-width * 0.5;
+  margin-top: calc(var(--grid-gutter-y) * -1);
+  margin-left: calc(var(--grid-gutter-x) * 0.5 * -1);
+  margin-right: calc(var(--grid-gutter-x) * 0.5 * -1);
 
+  &[class*="row-cols-"] > *,
   [class*="col-"] {
     flex: 0 0 auto;
     @extend %gutter-padding;
+  }
+  > * {
+    margin-top: var(--grid-gutter-y);
   }
 }
 

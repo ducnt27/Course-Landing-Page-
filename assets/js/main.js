@@ -1,27 +1,5 @@
-function load(selector, path) {
-  const cached = localStorage.getItem(path);
-  if (cached) {
-    document.querySelector(selector).innerHTML = cached;
-  }
-  fetch(path)
-    .then((res) => res.text())
-    .then((html) => {
-      if (html !== cached) {
-        document.querySelector(selector).innerHTML = html;
-        localStorage.setItem(path, html);
-      }
-    });
-}
 console.log("hihi");
-// document.addEventListener("DOMContentLoaded", function () {
-//   const menuBtn = document.querySelector(".menu-btn");
-//   if (menuBtn) {
-//     menuBtn.addEventListener("click", () => {
-//       console.log("meum");
-//       menuBtn.classList.toggle("active");
-//     });
-//   }
-// });
+
 document.addEventListener("click", function (event) {
   // if (event.target.classList.contains("menu-btn")) {
   //   event.target.classList.toggle("menu-btn--active");

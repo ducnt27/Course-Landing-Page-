@@ -3,6 +3,8 @@ function load(selector, path) {
   if (cached) {
     document.querySelector(selector).innerHTML = cached;
   }
+  console.log("load");
+
   fetch(path)
     .then((res) => res.text())
     .then((html) => {

@@ -1,0 +1,117 @@
+@use "../abstracts" as abs;
+.footer {
+  background: abs.$bg-color;
+  @include abs.breakpoints(md) {
+    margin-top: 50px;
+  }
+  &__inner {
+    padding-top: 92px;
+    @include abs.breakpoints(lg) {
+      margin-top: 55px;
+    }
+  }
+  &__title {
+    padding-bottom: 24px;
+    color: var(--text-color);
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /*  */
+  }
+  &__link {
+    display: inline-block;
+    padding-bottom: 14px;
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 162.5%; /*  */
+    transition: var(--smooth);
+    &:hover {
+      color: abs.$blue;
+    }
+  }
+  &__contact {
+    @include abs.flex(row, wrap, space-between);
+    gap: 28px;
+    padding-bottom: 24px;
+    @include abs.breakpoints(sm) {
+      @include abs.flex(column, wrap, space-between);
+    }
+    &-title {
+      padding-bottom: 18px;
+      color: var(--text-gray);
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 162.5%; /**/
+    }
+  }
+  &__social {
+    display: flex;
+    gap: 18px;
+  }
+  &__icon {
+    // display: inline-block;
+    @include abs.flex(row, nowrap, center, center);
+    width: 3.6rem;
+    height: 3.6rem;
+    background: var(--text-color);
+    border-radius: 100%;
+    transition: var(--smooth);
+
+    & img {
+      width: 1.4rem;
+      height: 1.4rem;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(1);
+    }
+    &:hover {
+      background: abs.$yellow;
+      & img {
+        filter: grayscale(1) brightness(0);
+      }
+    }
+  }
+  &__email {
+    color: var(--text-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 150% */
+    transition: var(--smooth);
+    &:hover {
+      color: abs.$blue;
+      text-decoration: underline;
+    }
+  }
+  &__phone {
+    color: var(--text-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 150% */
+    &:hover {
+      color: abs.$blue;
+    }
+  }
+  &__bottom {
+    @include abs.flex(row, wrap, space-between, center);
+    gap: 28px;
+    margin-top: 50px;
+    padding: 28px 0;
+    border-top: 1px solid var(--text-gray);
+  }
+  &__payments {
+    @include abs.breakpoints(md) {
+      width: 100%;
+    }
+  }
+  &__copyright {
+    color: var(--text-gray);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 162.5%; /* */
+  }
+}

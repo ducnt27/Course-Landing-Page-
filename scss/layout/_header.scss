@@ -125,6 +125,9 @@ $padding-horizontal: 30px;
       opacity: 1;
       transition: 0.3s linear;
     }
+    @include abs.breakpoints(md) {
+      width: 70%;
+    }
   }
   &__list {
     @extend %flexItemCenter;
