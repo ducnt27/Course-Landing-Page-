@@ -1224,7 +1224,6 @@ button {
 }
 .feature__content {
   flex: 1;
-  min-width: 400px;
   width: 100%;
 }
 @media (max-width: 991.98px) {
