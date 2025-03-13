@@ -781,6 +781,11 @@ button {
   padding: 100px 0;
   background: #fdf0df;
 }
+@media (max-width: 767.98px) {
+  .banner {
+    padding: 37px 0 28px 0;
+  }
+}
 .banner__inner {
   display: flex;
   flex-direction: row;

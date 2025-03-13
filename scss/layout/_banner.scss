@@ -2,6 +2,9 @@
 .banner {
   padding: 100px 0;
   background: abs.$bg-color;
+  @include abs.breakpoints(md) {
+    padding: 37px 0 28px 0;
+  }
   &__inner {
     @include abs.flex(row, wrap, space-evenly);
     gap: 45px;
