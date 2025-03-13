@@ -790,8 +790,7 @@ button {
   gap: 45px;
 }
 .banner__content {
-  min-width: 400px;
-  width: 100%;
+  flex: 1;
 }
 .banner__heading {
   color: var(--text-color);
