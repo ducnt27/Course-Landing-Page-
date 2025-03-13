@@ -183,6 +183,7 @@ button {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .row {
@@ -782,11 +783,14 @@ button {
 }
 .banner__inner {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 45px;
 }
 .banner__content {
-  max-width: 470px;
+  min-width: 400px;
   width: 100%;
 }
 .banner__heading {
@@ -795,6 +799,12 @@ button {
   font-style: normal;
   font-weight: 700;
   line-height: 66px; /* 106.452% */
+}
+@media (max-width: 767.98px) {
+  .banner__heading {
+    font-size: 3.2rem;
+    line-height: 131.25%;
+  }
 }
 .banner__desc {
   color: var(--text-color);
@@ -805,12 +815,27 @@ button {
   padding-top: 10px;
   padding-bottom: 40px;
 }
+@media (max-width: 767.98px) {
+  .banner__desc {
+    font-size: 1.4rem;
+    line-height: 171.429%;
+  }
+}
 .banner__actions {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 18px;
 }
 .banner__reviews {
   margin-top: 98px;
+}
+@media (max-width: 991.98px) {
+  .banner__reviews {
+    margin-top: 38px;
+  }
 }
 .banner__reviews-count {
   display: block;
@@ -848,14 +873,34 @@ button {
   filter: brightness(0) saturate(100%) invert(75%) sepia(85%) saturate(747%) hue-rotate(341deg) brightness(101%) contrast(99%);
 }
 .banner-std {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  min-height: 680px;
+}
+@media (max-width: 767.98px) {
+  .banner-std {
+    gap: 19px;
+  }
+}
+@media (max-width: 575.98px) {
+  .banner-std {
+    max-height: 405px;
+    height: 100%;
+    margin-bottom: 19px;
+  }
 }
 .banner-std__first {
   max-width: 270px;
 }
 .banner-std__second {
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
   position: relative;
-  max-width: 300px;
 }
 .banner-std__image {
   width: 100%;
@@ -864,30 +909,47 @@ button {
 }
 .banner-std__top {
   width: 100%;
-  height: 412px;
+  max-height: 412px;
+  height: 100%;
   margin-bottom: 30px;
   border-radius: 80px 0 80px 0;
   overflow: hidden;
 }
+@media (max-width: 767.98px) {
+  .banner-std__top {
+    margin-bottom: 19px;
+  }
+}
+@media (max-width: 575.98px) {
+  .banner-std__top {
+    height: 80%;
+    margin-bottom: 19px;
+  }
+}
 .banner-std__right {
-  width: 100%;
   height: 328px;
-  padding-left: 30px;
   border-radius: 0 80px 0 0;
   overflow: hidden;
 }
 .banner-std__bottom {
   position: absolute;
-  width: 330px;
-  height: 330px;
+  aspect-ratio: 1/1;
+  max-height: 270px;
+  width: 100%;
+  height: 100%;
   top: 240px;
-  right: -29px;
-  border: 30px solid #fdf0df;
+  outline: 30px solid #fdf0df;
   border-radius: 100%;
   overflow: hidden;
 }
+@media (max-width: 767.98px) {
+  .banner-std__bottom {
+    outline: 19px solid #fdf0df;
+  }
+}
 .banner-std__left {
-  height: 232px;
+  max-height: 232px;
+  height: 100%;
   border-radius: 0 0 0 80px;
   overflow: hidden;
 }
@@ -1152,8 +1214,9 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 70px;
 }
 @media (max-width: 991.98px) {
   .feature__inner {
@@ -1161,7 +1224,8 @@ button {
   }
 }
 .feature__content {
-  max-width: 470px;
+  flex: 1;
+  min-width: 400px;
   width: 100%;
 }
 @media (max-width: 991.98px) {
@@ -1181,6 +1245,7 @@ button {
 @media (max-width: 991.98px) {
   .feature__media {
     order: 1;
+    margin-top: 55px;
   }
 }
 .feature__title {
@@ -1188,20 +1253,39 @@ button {
   font-size: 4.2rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 52px; /* 123.81% */
+  line-height: 123.81%; /* 123.81% */
+}
+@media (max-width: 767.98px) {
+  .feature__title {
+    font-size: 2.6rem;
+    line-height: 138.462%; /*  */
+  }
 }
 .feature__description {
   color: var(--text-gray);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 28px; /* 155.556% */
+  line-height: 155.556%; /**/
   padding: 20px 0 40px 0;
+}
+@media (max-width: 991.98px) {
+  .feature__description {
+    font-size: 1.4rem;
+    line-height: 171.429%; /* */
+    padding: 14px 0 28px 0;
+  }
 }
 @media (max-width: 768px) {
   .feature .container {
     flex-direction: column;
   }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-card {
@@ -1213,54 +1297,10 @@ button {
   overflow: hidden;
   background-color: var(--text-gray);
 }
-.video-card__player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: flex-end;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-.video-card__timestamp {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 1.2rem;
-}
-.video-card__controls {
-  width: 100%;
-}
-.video-card__progress {
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
-}
-.video-card__progress::before {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 35%;
-  background-color: white;
-  border-radius: 2px;
-}
-.video-card__buttons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: flex-start;
-  justify-content: center;
-  align-items: stretch;
-}
 
 .categories__inner {
   margin-top: 170px;
+  margin-bottom: 50px;
 }
 @media (max-width: 991.98px) {
   .categories__inner {
@@ -1273,6 +1313,7 @@ button {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
+  gap: 28px;
   margin-top: 80px;
 }
 @media (max-width: 991.98px) {
@@ -1288,14 +1329,8 @@ button {
 .categories__video {
   max-width: 470px;
   max-height: 478px;
-  margin-bottom: 50px;
   border-radius: 12px;
   overflow: hidden;
-}
-@media (max-width: 767.98px) {
-  .categories__video {
-    margin-bottom: 28px;
-  }
 }
 .categories__video > img {
   width: 100%;
@@ -1310,7 +1345,7 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
 }
 .categories__item {
   width: 270px;
@@ -1467,6 +1502,11 @@ button {
 
 .feedback {
   margin: 160px 0;
+}
+@media (max-width: 991.98px) {
+  .feedback {
+    margin: 55px 0;
+  }
 }
 .feedback__slider {
   margin-top: 70px;

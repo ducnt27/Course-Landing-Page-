@@ -3,12 +3,11 @@
   padding: 100px 0;
   background: abs.$bg-color;
   &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include abs.flex(row, wrap, space-evenly);
+    gap: 45px;
   }
   &__content {
-    max-width: 470px;
+    min-width: 400px;
     width: 100%;
   }
   &__heading {
@@ -17,6 +16,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 66px; /* 106.452% */
+    @include abs.breakpoints(md) {
+      font-size: 3.2rem;
+      line-height: 131.25%;
+    }
   }
   &__desc {
     color: var(--text-color);
@@ -26,13 +29,20 @@
     line-height: 28px; /* 155.556% */
     padding-top: 10px;
     padding-bottom: 40px;
+    @include abs.breakpoints(md) {
+      font-size: 1.4rem;
+      line-height: 171.429%;
+    }
   }
   &__actions {
-    display: flex;
+    @include abs.flex(row, wrap);
     gap: 18px;
   }
   &__reviews {
     margin-top: 98px;
+    @include abs.breakpoints(lg) {
+      margin-top: 38px;
+    }
     &-count {
       display: block;
       color: var(--text-color);
@@ -72,13 +82,26 @@
   }
   //images
   &-std {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    min-height: 680px;
+    @include abs.breakpoints(md) {
+      gap: 19px;
+    }
+    @include abs.breakpoints(sm) {
+      max-height: 405px;
+      height: 100%;
+      margin-bottom: 19px;
+    }
     &__first {
       max-width: 270px;
     }
     &__second {
+      max-width: 270px;
+      @include abs.flex(column);
       position: relative;
-      max-width: 300px;
+      // max-width: 300px;
     }
     &__image {
       width: 100%;
@@ -87,32 +110,48 @@
     }
     &__top {
       width: 100%;
-      height: 412px;
+      max-height: 412px;
+      height: 100%;
       margin-bottom: 30px;
       border-radius: 80px 0 80px 0;
       overflow: hidden;
-      // max-height: 412px;
+      @include abs.breakpoints(md) {
+        margin-bottom: 19px;
+      }
+      @include abs.breakpoints(sm) {
+        height: 80%;
+        margin-bottom: 19px;
+      }
     }
     &__right {
-      width: 100%;
+      // order: 1;
       height: 328px;
-      padding-left: 30px;
       border-radius: 0 80px 0 0;
       overflow: hidden;
     }
     &__bottom {
+      // order: 2;
       position: absolute;
-      width: 330px;
-      height: 330px;
-      // padding-left: 30px;
+      aspect-ratio: 1 / 1;
+      // max-width: 330px;
+      max-height: 270px;
+      width: 100%;
+      height: 100%;
       top: 240px;
-      right: -29px;
-      border: 30px solid abs.$bg-color;
+      // right: -29px;
+      // border-top: 30px solid abs.$bg-color;
+      // border-right: 30px solid abs.$bg-color;
+      // border: 30px solid abs.$bg-color;
+      outline: 30px solid abs.$bg-color;
       border-radius: 100%;
       overflow: hidden;
+      @include abs.breakpoints(md) {
+        outline: 19px solid abs.$bg-color;
+      }
     }
     &__left {
-      height: 232px;
+      max-height: 232px;
+      height: 100%;
       border-radius: 0 0 0 80px;
       overflow: hidden;
     }
